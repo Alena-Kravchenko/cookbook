@@ -1,0 +1,16 @@
+{% extends 'app/base.html' %}
+
+{% block content %}
+    {% for recipe in recipes %}
+        <div class="recipe">
+            <div class="date">
+                <p>published: {{ recipe.pub_date }}</p>
+            </div>
+            <h1><a href="{% url 'recipe_detail' pk=recipe.pk %}">{{ recipe.name }}</a></h1>
+            <h2>{{ recipe.author }}</h2>
+            <h3>{{ recipe.duration }}</h3>
+            <p>{{ recipe.ingredients|linebreaksbr }}</p>
+            <p>{{ recipe.text|linebreaksbr }}</p>
+        </div>
+    {% endfor %}
+{% endblock %}

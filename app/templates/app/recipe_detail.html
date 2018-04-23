@@ -1,0 +1,17 @@
+{% extends 'app/base.html' %}
+
+{% block content %}
+    <div class="recipe">
+        {% if recipe.pub_date %}
+            <div class="date">
+                {{ recipe.pub_date }}
+            </div>
+        {% endif %}
+        <h1>{{ recipe.name }}</h1>
+        <h2>{{ recipe.author }}</h2>
+        <h3>{{ recipe.duration }}</h3>
+        <p>{{ recipe.ingredients|linebreaksbr }}</p>
+        <p>{{ recipe.text|linebreaksbr }}</p>
+
+    </div>
+{% endblock %}
